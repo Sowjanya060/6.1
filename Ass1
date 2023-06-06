@@ -1,0 +1,37 @@
+#include<stdio.h>
+#define SIZE 5
+	int stk[SIZE];
+	int top=-1;
+	push(int n)
+	{
+		if(top<SIZE-1)
+		{
+			top++;
+			stk[top]=n;
+			peep();
+		}
+		else
+		{
+			printf("\nstack is full!");
+		}
+	}
+	
+	main()
+	{
+		int i;
+		push(10);
+		push(20);
+		push(30);
+		push(40);
+		push(50);
+		push(60);
+		puts("\n");
+		for(i=0;i<=top;i++)
+		printf("%d ",stk[i]);
+		puts("\n");
+	}
+	peep()
+	{
+		if(top>0)
+		printf("Traverse %d",stk[top]);
+	}
